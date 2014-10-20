@@ -14,6 +14,25 @@ class LCurl {
 	protected $charset = 'utf-8';
 
 	/**
+	 * Build an URL with an optional query string.
+	 *
+	 * @param  string $url   the base URL without any query string
+	 * @param  array  $query array of GET parameters
+	 *
+	 * @return string
+	 */
+	public function buildUrl($url, array $query)
+	{
+		// append the query string
+		if (!empty($query)) {
+			$queryString = http_build_query($query);
+			$url .= '?' . $queryString;
+		}
+
+		return $url;
+	}
+
+	/**
 	 * Send get request.
 	 *
 	 * @param $url
