@@ -9,7 +9,7 @@ namespace Hamway\LCurl;
 
 class LCurl {
 	protected $ch;
-	protected $buffer;
+	protected $buffer = 128;
 	protected $url;
 	protected $charset = 'utf-8';
 
@@ -39,13 +39,11 @@ class LCurl {
 	 * @param $buffer
 	 * @return bool
 	 */
-	public function get($url, $buffer = 128) {
+	public function get($url) {
 		if (!$url) return false;
 
-		$this->setBuffer($buffer);
 		$this->init();
 		$this->setUrl($url);
-
 
 		$result = curl_exec($this->ch);
 
@@ -56,6 +54,29 @@ class LCurl {
 
 		curl_close($this->ch);
 		$this->ch = false;
+
+		return $result;
+	}
+
+	public function getImage($url, $saveTo = false) {
+		if (!$url) return false;
+
+		$this->initForImage();
+		$this->setUrl($url);
+
+		$result = curl_exec($this->ch);
+
+		if (!$result) {
+			var_dump(curl_error($this->ch));
+			return false;
+		}
+
+		curl_close($this->ch);
+		$this->ch = false;
+
+		if($saveTo) {
+			return file_put_contents($saveTo, $result);
+		}
 
 		return $result;
 	}
@@ -102,6 +123,16 @@ class LCurl {
 		}
 
 		return true;
+	}
+
+	protected function initForImage() {
+		if ($this->init()) {
+			curl_setopt($this->ch, CURLOPT_HEADER, 0);
+			curl_setopt($this->ch, CURLOPT_BINARYTRANSFER, 1);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private function getProxy()
