@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-0":{
-            "hamway\\LCurl": "src/"
+            "Hamway\\LCurl\\": "src/"
         }
     },
     "minimum-stability": "stable",
