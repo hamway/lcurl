@@ -1,0 +1,21 @@
+{
+    "name": "hamway/lcurl",
+    "description": "Laravel package for work with curl",
+    "keywords": ["laravel", "curl"],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Evgeny Anoykin",
+            "email": "hamway0611@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0":{
+            "hamway\\LCurl": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
