@@ -32,7 +32,7 @@ How to configure?
 -----------------
 After install library ready to use. But may be configure. For publish package config use command:
 
-    php artisan config:publish lcurl
+    php artisan config:publish hamway/lcurl
 
 Package configuration file example:
     
