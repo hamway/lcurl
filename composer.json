@@ -2,7 +2,7 @@
     "name": "hamway/lcurl",
     "description": "Laravel package for work with curl",
     "keywords": ["laravel", "curl"],
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Evgeny Anoykin",
