@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Hamway
- * Date: 13.09.14
- * Time: 18:41
- */
-
 namespace Hamway\LCurl;
 
 use Illuminate\Support\ServiceProvider;
@@ -14,7 +7,10 @@ class LCurlServiceProvider extends ServiceProvider {
 	protected $defer = false;
 	public function boot()
 	{
-		$this->package('hamway/lcurl');
+		$config_path = function_exists('config_path') ? config_path('lcurl.php') : 'lcurl.php';
+		$this->publishes([
+			__DIR__.'/../../config/config.php' => $config_path
+		], 'config');
 	}
 	public function register()
 	{
