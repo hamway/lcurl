@@ -20,7 +20,7 @@
     "minimum-stability": "stable",
     "extra": {
         "branch-alias": {
-            "laravel-4": "1.2"
+            "laravel-4": "1.2-dev"
         }
     }
 }
