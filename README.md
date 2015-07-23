@@ -1,7 +1,8 @@
 lcurl
 =========
 Author: Evgeny Anoykin <hamway0611@gmail.com>
-A Laravel Curl library for parsing.
+
+A Laravel Curl library for get content via proxy or direct (support random user agents, random interval between requests).
 
 Requirements
 ------------
