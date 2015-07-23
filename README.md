@@ -8,11 +8,11 @@ Requirements
 ------------
 
 * curl
-* laravel >=4.2 (Laravel 5 not supported)
+* Laravel >= 4.2 (v1.x)
+* Laravel >= 5.1 (v2.x)
 
 Soon
 ----
-* Support Laravel 5
 * Post request supported
 
 How to install?
